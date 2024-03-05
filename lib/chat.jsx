@@ -12,7 +12,8 @@ export default function Chat() {
 
   useEffect(() => {
     const pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHERKEY, {
-      cluster: "eu"
+      cluster: 'eu',
+      useTLS: true,
     })
 
     pusher.connection.bind("connected", () => {
